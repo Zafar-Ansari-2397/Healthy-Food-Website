@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800&display=swap');
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+} 
+/* ########### utility classes ############### */
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.btn{
+    display:inline-block;
+    padding: 1em 2.5em;
+    text-decoration: none;
+    margin-top: 1em;
+    cursor: pointer;
+    border-radius: 50px;
+    text-transform: uppercase;
+    outline: none;
+}
+.btn:hover{
+    color: green;
+    background-color: white;
+}
+.btn-primary{
+    color:#fff;
+    background-color: #16a083;
+}
+/* ######## navbar-styling ############## */
+
+/* for decktop mode */
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    /* color: #000; */
+    opacity: 0.85;
+    z-index: 999;
+}
+.nav-container{
+    display: flex;
+    justify-content:space-between;
+    height: 80px;
+    align-items:center;
+}
+.menu-items{
+    order: 2;
+    display: flex;
+}
+.menu-items li{
+    list-style: none;
+    margin: 1.5rem;
+    font-size: 1.8rem;
+}
+.logo{
+    order: 1;
+    font-size: 3rem;
+}
+.navbar a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    text-transform: uppercase;
+    padding: 8px;
+}
+.navbar a:hover{
+    color: #117964;
+}
+
+/* ############# showcase styling ################### */
+
+.showcase-container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 2rem;
+    flex-direction: column;
+    font-weight: 700;
+    padding-top: 12rem;
+}
+.showcase-area{
+    height: 75vh;
+    background: url(./images/jakub-kapusnak-sDbj1dFlFPU-unsplash.jpg);
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+.main-title{
+    text-transform: uppercase;
+}
+
+/* ############### styling about us #################### */
+
+#about-us{
+    padding: 50px 0;
+    background-color: #f5f5f7;
+}
+.about-wrapper{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+.about-wrapper h2{
+    font-size: 3.2rem;
+}
+.about-wrapper p{
+    font-size: 1.2rem;
+    color: #555;
+}
+#about-us .small{
+    font-size: 2.5rem;
+    color:#666;
+    font-weight: 600;
+}
+.about-image{
+    flex: 1 1 400px;
+    padding:10px;
+    /* border: 2px solid red; */
+    animation: about-image-animation 1.5s ease-in-out forwards;
+    /* animation-iteration-count: infinite; */
+    transform: translateX(150%);
+}
+@keyframes  about-image-animation {
+    100%{
+        transform: translateX(0%);
+}
+    }
+
+.about-text{
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+    animation: about-text-animation 1.5s ease-in-out forwards;
+    transform: translateX(-150%);
+    /* animation-iteration-count: infinite;s */
+}
+@keyframes about-text-animation {
+    100%{
+        transform: translateX(0%);
+}
+    }
+.about-image img{
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: right;
+}
+
+/* ############# styling types of food section ##################### */
+
+#food{
+    padding: 5rem 0 10rem 0;
+    margin: auto;
+}
+#food h2{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 2.3rem;
+    color: #555;
+
+}
+.food-container{
+  display: flex;
+  justify-content: space-between;
+}
+.food-container img{
+    display: block;
+    width: 100%;
+    margin: auto;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+.img-container{
+    margin:0 1rem;
+    position: relative;
+}
+.img-content{
+    position: absolute;
+    top:70%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.3s ease-in-out; 
+}
+.img-container:hover .img-content{
+   opacity: 1;
+   top: 40%;
+}
+
+.img-content h3{
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 400;
+    /* text-transform: lowercase; */
+}
+
+.img-content a{
+    font-size: 1.2rem;
+}
+.img-container::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    background:rgba(0, 0, 0, 0.637);
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.3s ease-in-out;
+}
+.img-container:hover:after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* ############# food menu styling ########################### */
+
+.food-menu-heading{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 2.3rem;
+    color: #555;
+}
+.food-menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0 30px 0;
+}
+.food-menu-items{
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+.food-menu-container img{
+    display: block;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.food-description{
+    margin: auto 1.5rem;
+}
+.food-menu-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #444;
+    /* border-bottom: 1px solid green; */
+    margin-bottom: 5px;
+}
+.food-description p{
+    font-size: 1.4rem;
+    color:#555 ;
+    font: weight 400;;
+}
+.food-description .food-price{
+    color: #117964;
+    font-weight: 700;
+}
+  
+/* ################# testimonial section styling ################### */
+
+#testimonials{
+    padding: 5rem 0rem;
+    background-color: rgb(243, 243,243);
+}
+.testimonial-title{
+     text-align: center;
+     text-transform: uppercase;
+     margin-bottom: 1rem;
+     line-height: 60px;
+     font-weight: 500;
+     font-size: 2.3rem;
+     color: #555555;
+     position: relative;
+}
+.testimonial-title::after{
+  content: ' ';
+    background: #7e7c7c;
+    width: 150px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.testimonial-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 1rem; 
+}
+.testimonial-container .checked{
+    color: #ff9529;
+}
+.testimonial-box .testimonial-text{
+    padding: 1rem 0;
+    color:#444;
+}
+.testimonial-box{
+    text-align: center;
+    padding: 1rem;
+}
+.customer-photo img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: auto ;
+}
+.testimonail-text{
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.customer-name{
+    margin-top: 1rem;
+}
+
+/* ############## contact section styling ################## */
+
+
+#contact{
+   padding: 5rem 0;
+   background-color:rgb(226,226,226);
+}
+.contact-container{
+    display: flex;
+    background: #fff;
+}
+.contact-image{
+    width: 50%;
+}
+.contact-image img{
+    display: block;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+.form-container{
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+}
+.form-container input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    box-shadow: none;
+    margin-bottom: 1rem;
+    outline: none;
+    color: #444;
+    font-weight: 400;
+}
+.form-container textarea{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    font-weight: 300;
+    outline: none;
+}
+.form-container h2{
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+.form-container .btn{
+    font-size: 1.2rem;
+}
+
+/* ############# footer Styling #################### */
+
+#footer h2{
+   text-align: center;
+   font-size: 1.5rem;
+   padding: 1.5rem;
+   font-weight: 400;
+   color: #fff;
+   background: rgb(65, 65, 65);
+}
+
+/* ######################### media quearies ####################### */
+
